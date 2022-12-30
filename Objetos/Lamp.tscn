@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Objetos/pendant_light_01_.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Objetos/Lampada.gd" type="Script" id=2]
+
+[node name="Lamp" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.004, 0, 0, 0, 0.004, 0, 0, 0, 0.004, 0, 1.05537, 0 )
+mesh = ExtResource( 1 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17357, 0 )
+light_indirect_energy = 5.0
+
+[node name="Timer" type="Timer" parent="."]

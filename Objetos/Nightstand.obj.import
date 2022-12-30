@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Nightstand.obj-034ddb76482e7a2b06a351fc25864e22.mesh"
+
+[deps]
+
+files=[ "res://.import/Nightstand.obj-034ddb76482e7a2b06a351fc25864e22.mesh" ]
+
+source_file="res://Objetos/Nightstand.obj"
+dest_files=[ "res://.import/Nightstand.obj-034ddb76482e7a2b06a351fc25864e22.mesh", "res://.import/Nightstand.obj-034ddb76482e7a2b06a351fc25864e22.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

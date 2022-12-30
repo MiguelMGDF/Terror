@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/LightBlink.mp3-6ffe49f0310e653c24b60826a8f641c8.mp3str"
+
+[deps]
+
+source_file="res://Sounds/LightBlink.mp3"
+dest_files=[ "res://.import/LightBlink.mp3-6ffe49f0310e653c24b60826a8f641c8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

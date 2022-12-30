@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Impacto.mp3-c4c63cd1ae016033336306fb4084ff9d.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Impacto.mp3"
+dest_files=[ "res://.import/Impacto.mp3-c4c63cd1ae016033336306fb4084ff9d.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

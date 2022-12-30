@@ -1,0 +1,671 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Textures/Rock_044_SD/Rock_044_Height.png" type="Texture" id=1]
+[ext_resource path="res://Textures/Rock_044_SD/Rock_044_BaseColor.jpg" type="Texture" id=2]
+[ext_resource path="res://Textures/Rock_044_SD/Rock_044_Roughness.jpg" type="Texture" id=3]
+[ext_resource path="res://Textures/Rock_044_SD/Rock_044_Normal.jpg" type="Texture" id=4]
+[ext_resource path="res://Textures/Rock_044_SD/Rock_044_AmbientOcclusion.jpg" type="Texture" id=5]
+[ext_resource path="res://Objetos/pendant_light_01_.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://Objetos/ParedePedra.tres" type="Material" id=7]
+[ext_resource path="res://Objetos/Madeira.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Textures/Asphalt 001/Asphalt_001_OCC.jpg" type="Texture" id=9]
+[ext_resource path="res://Textures/Asphalt 001/Asphalt_001_COLOR.jpg" type="Texture" id=10]
+[ext_resource path="res://Objetos/LuzCorredor.gd" type="Script" id=11]
+[ext_resource path="res://Sounds/LightBlink.mp3" type="AudioStream" id=12]
+[ext_resource path="res://Sounds/Impacto.mp3" type="AudioStream" id=13]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 2 )
+roughness_texture = ExtResource( 3 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 4 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 5 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+depth_enabled = true
+depth_scale = 0.05
+depth_deep_parallax = false
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 1 )
+uv1_scale = Vector3( 6, 6, 1 )
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="CubeMesh" id=6]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 10 )
+depth_enabled = true
+depth_scale = 0.05
+depth_deep_parallax = false
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 9 )
+uv1_scale = Vector3( 15, 15, 15 )
+
+[sub_resource type="ConcavePolygonShape" id=5]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[node name="Mina" type="Spatial"]
+
+[node name="Corredor" type="Spatial" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.02421, 1.19209e-07, -1.10641 )
+
+[node name="Parede4" type="MeshInstance" parent="Corredor"]
+transform = Transform( -2.28986e-09, 0, 1.28626, 0, 0.085801, 0, -1.04777, 0, -1.12453e-06, -1.18264, 1.59162, 3.60443 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Parede4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Parede4/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Side" type="Spatial" parent="Corredor"]
+
+[node name="Parede3" type="MeshInstance" parent="Corredor/Side"]
+transform = Transform( 0.0777943, 0, 0.277844, 0, 0.765159, 0, -0.0679552, 0, 0.318072, -0.0928788, 0.780726, 2.78847 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Side/Parede3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Side/Parede3/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede4" type="MeshInstance" parent="Corredor/Side"]
+transform = Transform( 0.100311, 0, 0.100777, 0, 0.765159, 0, -0.0246481, 0, 0.410135, 0.297697, 0.780726, 3.5252 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Side/Parede4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Side/Parede4/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede5" type="MeshInstance" parent="Corredor/Side"]
+transform = Transform( 0.102138, 0, -0.0630227, 0, 0.765159, 0, 0.0154142, 0, 0.417607, 0.352739, 0.780726, 4.30331 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Side/Parede5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Side/Parede5/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede6" type="MeshInstance" parent="Corredor/Side"]
+transform = Transform( -0.0675956, -0.197104, -0.219556, -0.0663968, 0.274977, 0, 0.0411359, 0.119949, -0.36078, 0.308232, 1.50756, 3.51415 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Side/Parede6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Side/Parede6/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede9" type="MeshInstance" parent="Corredor/Side"]
+transform = Transform( -0.0940467, -0.274233, 0.169679, -0.0663968, 0.274977, 0, -0.031791, -0.0927002, -0.501958, 0.38685, 1.49481, 4.21504 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Side/Parede9"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Side/Parede9/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede7" type="MeshInstance" parent="Corredor/Side"]
+transform = Transform( -0.0415528, -0.121165, -0.359417, -0.0663968, 0.274977, 0, 0.0673402, 0.196359, -0.221781, -0.249556, 1.50756, 2.9727 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Side/Parede7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Side/Parede7/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede8" type="MeshInstance" parent="Corredor/Side"]
+transform = Transform( -0.0146603, -0.0427484, -0.415024, -0.0663968, 0.274977, 0, 0.0777586, 0.226738, -0.0782469, -0.886526, 1.50756, 2.77185 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Side/Parede8"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Side/Parede8/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Side2" type="Spatial" parent="Corredor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90208, 2.38419e-07, 0.315634 )
+
+[node name="Parede6" type="MeshInstance" parent="Corredor/Side2"]
+transform = Transform( 0.060616, 0.176752, -0.271472, -0.0663968, 0.274977, 0, 0.0508629, 0.148312, 0.323528, -0.395938, 1.53417, 2.64302 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Side2/Parede6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Side2/Parede6/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede9" type="MeshInstance" parent="Corredor/Side2"]
+transform = Transform( -3.45882e-09, -1.00857e-08, -0.422335, -0.0663968, 0.274977, 0, 0.0791286, 0.230733, -1.84609e-08, 0.189686, 1.52142, 2.34444 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Side2/Parede9"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Side2/Parede9/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede7" type="MeshInstance" parent="Corredor/Side2"]
+transform = Transform( 0.0771005, 0.224819, -0.0950048, -0.0663968, 0.274977, 0, 0.0178001, 0.0519037, 0.411511, -0.730249, 1.53417, 3.34482 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Side2/Parede7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Side2/Parede7/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede8" type="MeshInstance" parent="Corredor/Side2"]
+transform = Transform( 0.0783585, 0.228488, 0.0587777, -0.0663968, 0.274977, 0, -0.0110126, -0.0321118, 0.418225, -0.716549, 1.53417, 4.01257 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Side2/Parede8"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Side2/Parede8/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede3" type="MeshInstance" parent="Corredor/Side2"]
+transform = Transform( -0.0791286, 5.12425e-08, -0.271472, -9.03034e-09, -0.765159, 0, -0.0663968, 4.29976e-08, 0.323528, -0.536711, 0.780726, 2.53818 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Side2/Parede3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Side2/Parede3/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede4" type="MeshInstance" parent="Corredor/Side2"]
+transform = Transform( -0.100648, 6.51779e-08, -0.0950048, -9.03034e-09, -0.765159, 0, -0.0232363, 1.50475e-08, 0.411511, -0.885112, 0.780726, 3.22802 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Side2/Parede4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Side2/Parede4/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede5" type="MeshInstance" parent="Corredor/Side2"]
+transform = Transform( -0.10229, 6.62413e-08, 0.0587777, -9.03034e-09, -0.765159, 0, 0.0143759, -9.30961e-09, 0.418225, -0.913589, 0.780726, 4.04326 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Side2/Parede5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Side2/Parede5/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Corredor" type="Spatial" parent="Corredor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0852, 0, 1.5558 )
+
+[node name="Parede10" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( -0.103295, -6.68923e-08, 0, 9.03034e-09, -0.765159, 0, 0, 0, 0.422336, -1.16597, 0.780726, 0.671687 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede10"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede10/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede11" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( -0.103295, -6.68923e-08, 0, 9.03034e-09, -0.765159, 0, 0, 0, 0.422336, -1.16597, 0.780726, -0.179456 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede11"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede11/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede12" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( -0.103295, -6.68923e-08, 0, 9.03034e-09, -0.765159, 0, 0, 0, 0.422336, -1.16597, 0.780726, -1.00677 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede12"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede12/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede13" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( -0.103295, -6.68923e-08, 0, 9.03034e-09, -0.765159, 0, 0, 0, 0.422336, -1.16597, 0.780726, -1.84273 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede13"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede13/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede14" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( -0.103295, -6.68923e-08, 0, 9.03034e-09, -0.765159, 0, 0, 0, 0.422336, -1.16597, 0.780726, -2.68938 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede14"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede14/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede15" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( -0.103295, -6.68923e-08, 0, 9.03034e-09, -0.765159, 0, 0, 0, 0.422336, -1.16597, 0.780726, -3.53388 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede15"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede15/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede16" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( -0.103295, -6.68923e-08, 0, 9.03034e-09, -0.765159, 0, 0, 0, 0.422336, -1.16597, 0.780726, -4.3667 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede16"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede16/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede17" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( -0.103295, -6.68923e-08, 0, 9.03034e-09, -0.765159, 0, 0, 0, 0.422336, -1.16597, 0.780726, -5.19676 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede17"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede17/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede18" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( -0.103295, -6.68923e-08, 0, 9.03034e-09, -0.765159, 0, 0, 0, 0.422336, -1.16597, 0.780726, -6.03572 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede18"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede18/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede19" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( -0.103295, -6.68923e-08, 0, 9.03034e-09, -0.765159, 0, 0, 0, 0.422336, -1.16597, 0.780726, -6.87213 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede19"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede19/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede20" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( -0.103295, -6.68923e-08, 0, 9.03034e-09, -0.765159, 0, 0, 0, 0.422336, 0.73821, 0.780726, 0.624805 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede20"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede20/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede21" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( -0.103295, -6.68923e-08, 0, 9.03034e-09, -0.765159, 0, 0, 0, 0.422336, 0.73821, 0.780726, -0.226338 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede21"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede21/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede22" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( -0.103295, -6.68923e-08, 0, 9.03034e-09, -0.765159, 0, 0, 0, 0.422336, 0.73821, 0.780726, -1.05365 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede22"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede22/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede23" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( -0.103295, -6.68923e-08, 0, 9.03034e-09, -0.765159, 0, 0, 0, 0.422336, 0.738209, 0.780726, -1.88961 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede23"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede23/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede24" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( -0.103295, -6.68923e-08, 0, 9.03034e-09, -0.765159, 0, 0, 0, 0.422336, 0.73821, 0.780726, -2.73627 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede24"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede24/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede25" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( -0.103295, -6.68923e-08, 0, 9.03034e-09, -0.765159, 0, 0, 0, 0.422336, 0.73821, 0.780726, -3.58077 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede25"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede25/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede26" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( -0.103295, -6.68923e-08, 0, 9.03034e-09, -0.765159, 0, 0, 0, 0.422336, 0.738209, 0.780726, -4.41358 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede26"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede26/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede27" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( -0.103295, -6.68923e-08, 0, 9.03034e-09, -0.765159, 0, 0, 0, 0.422336, 0.738209, 0.780726, -5.24364 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede27"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede27/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede28" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( -0.103295, -6.68923e-08, 0, 9.03034e-09, -0.765159, 0, 0, 0, 0.422336, 0.73821, 0.780726, -6.0826 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede28"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede28/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede29" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( -0.103295, -6.68923e-08, 0, 9.03034e-09, -0.765159, 0, 0, 0, 0.422336, 0.738209, 0.780726, -6.91901 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede29"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede29/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede30" type="MeshInstance" parent="Corredor/Corredor"]
+transform = Transform( 1.70953e-08, -1.10707e-14, 1.01069, -9.03034e-09, -0.765159, 0, 0.103295, -6.68923e-08, 7.25698e-09, -0.271609, 0.780726, -7.2937 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Corredor/Parede30"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Corredor/Parede30/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Teto" type="Spatial" parent="Corredor"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.57821, 2.72149, 1.54915 )
+
+[node name="Parede10" type="MeshInstance" parent="Corredor/Teto"]
+transform = Transform( -0.103659, -8.59961e-08, -4.55225e-16, 1.16093e-08, -1.19951, -1.04143e-08, -1.11339e-16, 1.8868e-08, 0.423824, -1.16597, 0.780726, 0.684984 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Teto/Parede10"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Teto/Parede10/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede11" type="MeshInstance" parent="Corredor/Teto"]
+transform = Transform( -0.103659, -8.59961e-08, -4.55225e-16, 1.16093e-08, -1.19951, -1.04143e-08, -1.11339e-16, 1.8868e-08, 0.423824, -1.16597, 0.780726, -0.16916 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Teto/Parede11"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Teto/Parede11/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede12" type="MeshInstance" parent="Corredor/Teto"]
+transform = Transform( -0.103659, -8.59961e-08, -4.55225e-16, 1.16093e-08, -1.19951, -1.04143e-08, -1.11339e-16, 1.8868e-08, 0.423824, -1.16597, 0.780726, -0.999391 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Teto/Parede12"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Teto/Parede12/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede13" type="MeshInstance" parent="Corredor/Teto"]
+transform = Transform( -0.103659, -8.59961e-08, -4.55225e-16, 1.16093e-08, -1.19951, -1.04143e-08, -1.11339e-16, 1.8868e-08, 0.423824, -1.16597, 0.780726, -1.8383 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Teto/Parede13"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Teto/Parede13/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede14" type="MeshInstance" parent="Corredor/Teto"]
+transform = Transform( -0.103659, -8.59961e-08, -4.55225e-16, 1.16093e-08, -1.19951, -1.04143e-08, -1.11339e-16, 1.8868e-08, 0.423824, -1.16597, 0.780726, -2.68794 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Teto/Parede14"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Teto/Parede14/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede15" type="MeshInstance" parent="Corredor/Teto"]
+transform = Transform( -0.103659, -8.59961e-08, -4.55225e-16, 1.16093e-08, -1.19951, -1.04143e-08, -1.11339e-16, 1.8868e-08, 0.423824, -1.16597, 0.780726, -3.53541 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Teto/Parede15"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Teto/Parede15/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede16" type="MeshInstance" parent="Corredor/Teto"]
+transform = Transform( -0.103659, -8.59961e-08, -4.55225e-16, 1.16093e-08, -1.19951, -1.04143e-08, -1.11339e-16, 1.8868e-08, 0.423824, -1.16597, 0.780726, -4.37117 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Teto/Parede16"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Teto/Parede16/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede17" type="MeshInstance" parent="Corredor/Teto"]
+transform = Transform( -0.103659, -8.59961e-08, -4.55225e-16, 1.16093e-08, -1.19951, -1.04143e-08, -1.11339e-16, 1.8868e-08, 0.423824, -1.16597, 0.780726, -5.20415 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Teto/Parede17"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Teto/Parede17/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede18" type="MeshInstance" parent="Corredor/Teto"]
+transform = Transform( -0.103659, -8.59961e-08, -4.55225e-16, 1.16093e-08, -1.19951, -1.04143e-08, -1.11339e-16, 1.8868e-08, 0.423824, -1.16597, 0.780726, -6.04607 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Teto/Parede18"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Teto/Parede18/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Parede19" type="MeshInstance" parent="Corredor/Teto"]
+transform = Transform( -0.103659, -8.59961e-08, -4.55225e-16, 1.16093e-08, -1.19951, -1.04143e-08, -1.11339e-16, 1.8868e-08, 0.423824, -1.16597, 0.780726, -6.88543 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Teto/Parede19"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Teto/Parede19/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Madeiras" type="Spatial" parent="Corredor"]
+
+[node name="Madeira" parent="Corredor/Madeiras" instance=ExtResource( 8 )]
+
+[node name="Madeira2" parent="Corredor/Madeiras" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512824, 0, 0.145107 )
+
+[node name="Madeira3" parent="Corredor/Madeiras" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512824, 0, -1.62085 )
+
+[node name="Madeira4" parent="Corredor/Madeiras" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512824, 0, -3.36601 )
+
+[node name="Madeira5" parent="Corredor/Madeiras" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512824, 0, -5.42269 )
+
+[node name="Chao" type="MeshInstance" parent="Corredor"]
+transform = Transform( 2.16095, 0, -1.38571e-07, 0, 0.0477191, 0, -1.37187e-07, 0, 5.35289, -0.889, 0, -0.592937 )
+mesh = SubResource( 6 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="Corredor/Chao"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Corredor/Chao/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="Lampadas" type="Spatial" parent="Corredor"]
+
+[node name="MeshInstance" type="MeshInstance" parent="Corredor/Lampadas"]
+transform = Transform( 0.004, 0, 0, 0, 0.004, 0, 0, 0, 0.004, -1.39979, 1.05537, -4.5518 )
+mesh = ExtResource( 6 )
+
+[node name="SpotLight" type="SpotLight" parent="Corredor/Lampadas/MeshInstance"]
+transform = Transform( 250, 6.36646e-12, 2.71051e-19, 0, -1.09278e-05, 250, 6.36646e-12, -250, -1.09278e-05, 58.0854, 0, -2.60547 )
+light_specular = 1.0
+spot_angle = 81.33
+
+[node name="LuzDesliga" type="AudioStreamPlayer3D" parent="Corredor/Lampadas/MeshInstance/SpotLight"]
+stream = ExtResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Corredor/Lampadas"]
+transform = Transform( 0.004, 0, 0, 0, 0.004, 0, 0, 0, 0.004, -1.39979, 1.05537, -2.47674 )
+mesh = ExtResource( 6 )
+
+[node name="SpotLight" type="SpotLight" parent="Corredor/Lampadas/MeshInstance2"]
+transform = Transform( 250, 1.81899e-12, 1.0842e-19, 0, -1.09278e-05, 250, 1.81899e-12, -250, -1.09278e-05, 0, 0, 0 )
+light_specular = 1.0
+spot_angle = 81.33
+
+[node name="LuzDesliga" type="AudioStreamPlayer3D" parent="Corredor/Lampadas/MeshInstance2/SpotLight"]
+stream = ExtResource( 13 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Corredor/Lampadas"]
+transform = Transform( 0.004, 0, 0, 0, 0.004, 0, 0, 0, 0.004, -1.39979, 1.05537, -0.654992 )
+mesh = ExtResource( 6 )
+
+[node name="SpotLight" type="SpotLight" parent="Corredor/Lampadas/MeshInstance3"]
+transform = Transform( 250, 1.81899e-12, 1.0842e-19, 0, -1.09278e-05, 250, 1.81899e-12, -250, -1.09278e-05, 0, 0, 0 )
+light_specular = 1.0
+spot_angle = 81.33
+
+[node name="LuzDesliga" type="AudioStreamPlayer3D" parent="Corredor/Lampadas/MeshInstance3/SpotLight"]
+stream = ExtResource( 13 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="Corredor/Lampadas"]
+transform = Transform( 0.004, 0, 0, 0, 0.004, 0, 0, 0, 0.004, -1.39979, 1.05537, 1.15839 )
+mesh = ExtResource( 6 )
+
+[node name="SpotLight" type="SpotLight" parent="Corredor/Lampadas/MeshInstance4"]
+transform = Transform( 250, 1.81899e-12, 1.0842e-19, 0, -1.09278e-05, 250, 1.81899e-12, -250, -1.09278e-05, 0, 0, 0 )
+light_specular = 1.0
+spot_angle = 81.33
+
+[node name="LuzDesliga" type="AudioStreamPlayer3D" parent="Corredor/Lampadas/MeshInstance4/SpotLight"]
+stream = ExtResource( 13 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="Corredor/Lampadas"]
+transform = Transform( 0.004, 0, 0, 0, 0.004, 0, 0, 0, 0.004, -1.16745, 1.05537, 4.59868 )
+mesh = ExtResource( 6 )
+
+[node name="SpotLight2" type="SpotLight" parent="Corredor/Lampadas/MeshInstance5"]
+transform = Transform( 250, 6.36646e-12, 2.71051e-19, 0, -1.09278e-05, 250, 6.36646e-12, -250, -1.09278e-05, 2.61185, 0, -2.54608 )
+light_specular = 1.0
+spot_angle = 81.33
+script = ExtResource( 11 )
+
+[node name="Som" type="AudioStreamPlayer3D" parent="Corredor/Lampadas/MeshInstance5/SpotLight2"]
+transform = Transform( 1, 0, 0, 0, 1, 8.35187e-23, 0, 8.35187e-23, 1, 0, 0, 0 )
+stream = ExtResource( 12 )
+
+[node name="Timer" type="Timer" parent="Corredor/Lampadas/MeshInstance5/SpotLight2"]
+
+[connection signal="timeout" from="Corredor/Lampadas/MeshInstance5/SpotLight2/Timer" to="Corredor/Lampadas/MeshInstance5/SpotLight2" method="_on_Timer_timeout"]

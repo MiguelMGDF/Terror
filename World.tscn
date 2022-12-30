@@ -1,0 +1,950 @@
+[gd_scene load_steps=54 format=2]
+
+[ext_resource path="res://Textures/BricksPaintedWhite001/BricksPaintedWhite001_Flat.jpg" type="Texture" id=1]
+[ext_resource path="res://Textures/Asphalt 001/Asphalt_001_OCC.jpg" type="Texture" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objetos/Cama.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Textures/BricksPaintedWhite001/BricksPaintedWhite001_AO_1K.jpg" type="Texture" id=5]
+[ext_resource path="res://Objetos/Desk.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objetos/Lamp.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objetos/Plants.obj" type="ArrayMesh" id=8]
+[ext_resource path="res://Objetos/TV.fbx" type="PackedScene" id=9]
+[ext_resource path="res://Objetos/Mesa.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objetos/Parede.tres" type="Material" id=11]
+[ext_resource path="res://Objetos/Door.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Objetos/ParedePedra.tres" type="Material" id=13]
+[ext_resource path="res://Textures/Asphalt 001/Asphalt_001_COLOR.jpg" type="Texture" id=14]
+[ext_resource path="res://Textures/WoodFlooring044/WoodFlooring044_COL_1K.jpg" type="Texture" id=15]
+[ext_resource path="res://Objetos/Corredor.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Objetos/Cave.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Textures/Rock_044_SD/Rock_044_Height.png" type="Texture" id=18]
+[ext_resource path="res://Textures/Rock_044_SD/Rock_044_BaseColor.jpg" type="Texture" id=19]
+[ext_resource path="res://Textures/Rock_044_SD/Rock_044_Roughness.jpg" type="Texture" id=20]
+[ext_resource path="res://Textures/Rock_044_SD/Rock_044_Normal.jpg" type="Texture" id=21]
+[ext_resource path="res://Textures/Rock_044_SD/Rock_044_AmbientOcclusion.jpg" type="Texture" id=22]
+[ext_resource path="res://World.gd" type="Script" id=23]
+[ext_resource path="res://Objetos/Keyteste2.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Objetos/Alavanca.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Sounds/SomTerror.mp3" type="AudioStream" id=26]
+[ext_resource path="res://Sounds/DoorLock.mp3" type="AudioStream" id=27]
+[ext_resource path="res://Sounds/Impacto.mp3" type="AudioStream" id=28]
+[ext_resource path="res://Objetos/Carta.tscn" type="PackedScene" id=29]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=16]
+albedo_texture = ExtResource( 15 )
+uv1_scale = Vector3( 10, 10, 10 )
+
+[sub_resource type="ConcavePolygonShape" id=4]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="ConcavePolygonShape" id=6]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="CubeMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_texture = ExtResource( 5 )
+uv1_scale = Vector3( 10, 1, 10 )
+
+[sub_resource type="CubeMesh" id=8]
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 0, 0.223529, 0.384314, 1 )
+
+[sub_resource type="ConcavePolygonShape" id=10]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=11]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=12]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="SpatialMaterial" id=13]
+albedo_color = Color( 0.537255, 0.290196, 0, 1 )
+metallic = 0.39
+
+[sub_resource type="SpatialMaterial" id=14]
+albedo_color = Color( 0.0627451, 0.643137, 0.113725, 1 )
+roughness = 0.43
+
+[sub_resource type="ConvexPolygonShape" id=15]
+points = PoolVector3Array( -0.175857, 0.426361, -0.42582, 0.0236119, 1.87419, 0.721679, 0.273422, 2.12403, 0.400284, -0.690312, 1.90975, -0.24222, 0.309209, 1.76705, -0.70633, 0.123517, 0.0585138, 0.172913, 0.737536, 1.51699, 0.186068, -0.58323, 1.1958, 0.364462, 0.385284, 0.499834, -0.289625, 0.380504, 2.23116, -0.0635396, -0.33342, 1.87397, -0.634972, -0.440362, 2.15959, 0.221603, -0.444409, 0.422536, -0.0601544, 0.309209, 1.23114, 0.650178, -0.175074, 0.429101, 0.403716, -0.440362, 1.3385, -0.634972, 0.701888, 1.4812, -0.277898, -0.618878, 1.58834, 0.471641, 0.273422, 1.15979, -0.670651, 0.456688, 0.491446, 0.106256, -0.297633, 2.05245, -0.563471, -0.690312, 1.30271, -0.170719, -0.226338, 1.58834, 0.721679, 0.0568473, 0.0592495, -0.226524, 0.594807, 1.80261, 0.364462, 0.701888, 1.80261, -0.170719, -0.208915, 0.061797, 0.072676, 0.309209, 2.12403, -0.456435, -0.119117, 1.41008, -0.742152, 0.666241, 1.30294, 0.364462, 0.190522, 0.323282, 0.340235, -0.33342, 2.15959, -0.313577, 0.416291, 1.65991, 0.614499, 0.630454, 1.12445, -0.313577, -0.341036, 0.362182, -0.258791, 0.357968, 0.254837, -0.0601738, 0.202128, 2.26695, 0.114567, -0.439715, 0.495725, 0.171624, -0.690312, 1.26715, 0.0788886, 0.122854, 0.462766, -0.456836, -0.58323, 1.30271, -0.456435, 0.487585, 1.90975, -0.527793, 0.666241, 1.90975, 0.0788886, 0.630454, 1.44564, -0.420757, -0.618878, 1.69548, -0.456435, 0.0902999, 0.456629, 0.440505, 0.55916, 2.08824, -0.13504, 0.166341, 2.01689, -0.634972, 0.351942, 0.434713, 0.268828, -0.476149, 2.15959, -0.13504, -0.17438, 0.0684238, -0.158601, -0.0120353, 2.05268, 0.542998, -0.273587, 0.563264, 0.402564, -0.387758, 1.87866, 0.486831, -0.654665, 1.90975, 0.0430666, -0.0429559, 0.0576945, 0.206367, -0.0120353, 1.65991, -0.742152, -0.654665, 1.12445, 0.185925, 0.202128, 2.19515, -0.313577, -0.0428378, 0.525516, -0.492623, 0.489389, 0.558899, -0.059915, 0.189981, 0.0596855, -0.126549, 0.416291, 2.12403, 0.221603, -0.306145, 0.399139, 0.302884 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 14 )
+depth_enabled = true
+depth_scale = 0.05
+depth_deep_parallax = false
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 2 )
+uv1_scale = Vector3( 15, 15, 15 )
+
+[sub_resource type="SpatialMaterial" id=17]
+albedo_texture = ExtResource( 19 )
+roughness_texture = ExtResource( 20 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 21 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 22 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+depth_enabled = true
+depth_scale = 0.05
+depth_deep_parallax = false
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 18 )
+uv1_scale = Vector3( 6, 6, 1 )
+
+[sub_resource type="Animation" id=24]
+resource_name = "FadeIn"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("CanvasLayer/ColorRect:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("CanvasLayer/ColorRect:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("CanvasLayer/ColorRect:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Player")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "startplay"
+} ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "MudarMapa"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Mina:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -10.8712 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sala1/Moveis:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -0.867552, 0.780726, -1.22645 ), Vector3( -0.867552, 0.780726, 9.47961 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sala1:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 10.7061 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sala1/Moveis/Keyteste2:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -2.11338, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Sala1/Moveis/Keyteste2:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -0.147441, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Sala1/Moveis/Keyteste2:translation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1.52378, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Sala1/Moveis/Keyteste2:rotation_degrees:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1.635, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Sala1/Moveis/Keyteste2:rotation_degrees:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 90, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Sala1/Moveis/Keyteste2:rotation_degrees:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 7.14875e-08, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Mina:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -10.2807 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Sala1/Moveis:translation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.867552, 0.780726, -1.22645 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Sala1:translation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Mina/Corredor/Lampadas/MeshInstance/SpotLight:light_energy")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Mina/Corredor/Lampadas/MeshInstance2/SpotLight:light_energy")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Mina/Corredor/Lampadas/MeshInstance3/SpotLight:light_energy")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Mina/Corredor/Lampadas/MeshInstance4/SpotLight:light_energy")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Mina/Corredor/Lampadas/MeshInstance5/SpotLight2:light_energy")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 5.0 ]
+}
+tracks/14/type = "bezier"
+tracks/14/path = NodePath("CanvasLayer/ColorRect:color:r")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/15/type = "bezier"
+tracks/15/path = NodePath("CanvasLayer/ColorRect:color:g")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/16/type = "bezier"
+tracks/16/path = NodePath("CanvasLayer/ColorRect:color:b")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/17/type = "bezier"
+tracks/17/path = NodePath("CanvasLayer/ColorRect:color:a")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "chave"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sala1/Moveis/Keyteste2:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 2.2762, -0.25, 0, 0.25, 0, 2.35162, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Sala1/Moveis/Keyteste2:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -0.325146, -0.25, 0, 0.25, 0, -0.325146, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Sala1/Moveis/Keyteste2:translation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1.01791, -0.25, 0, 0.25, 0, 1.01791, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Sala1/Moveis/Keyteste2:rotation_degrees:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.5, 1 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Sala1/Moveis/Keyteste2:rotation_degrees:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 90, -0.25, 0, 0.25, 0, 90, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.5, 1 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Sala1/Moveis/Keyteste2:rotation_degrees:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 90, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.5, 1 )
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("Sala1/Moveis/Keyteste2")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "fim_anim"
+} ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("Sala1/Door")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "set_aberta"
+} ]
+}
+tracks/8/type = "audio"
+tracks/8/path = NodePath("Sala1/Moveis/Keyteste2/UnlockSound")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 27 )
+} ],
+"times": PoolRealArray( 0.5 )
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "jumpscare"
+length = 9.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Mina/Corredor/Lampadas/MeshInstance/SpotLight:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Mina/Corredor/Lampadas/MeshInstance2/SpotLight:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.7, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Mina/Corredor/Lampadas/MeshInstance3/SpotLight:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2.5, 2.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Mina/Corredor/Lampadas/MeshInstance4/SpotLight:light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 2.9, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Mina/Corredor/Lampadas/MeshInstance5/SpotLight2:light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 4.9, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 5.0, 0.0 ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Player")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "jumpscare"
+} ]
+}
+tracks/6/type = "audio"
+tracks/6/path = NodePath("TerrorSFX")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 26 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/7/type = "audio"
+tracks/7/path = NodePath("Mina/Corredor/Lampadas/MeshInstance/SpotLight/LuzDesliga")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 28 )
+} ],
+"times": PoolRealArray( 1 )
+}
+tracks/8/type = "audio"
+tracks/8/path = NodePath("Mina/Corredor/Lampadas/MeshInstance2/SpotLight/LuzDesliga")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 28 )
+} ],
+"times": PoolRealArray( 1.8 )
+}
+tracks/9/type = "audio"
+tracks/9/path = NodePath("Mina/Corredor/Lampadas/MeshInstance3/SpotLight/LuzDesliga")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 28 )
+} ],
+"times": PoolRealArray( 2.6 )
+}
+tracks/10/type = "audio"
+tracks/10/path = NodePath("Mina/Corredor/Lampadas/MeshInstance4/SpotLight/LuzDesliga")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 28 )
+} ],
+"times": PoolRealArray( 3 )
+}
+
+[sub_resource type="Environment" id=20]
+background_mode = 1
+fog_enabled = true
+fog_color = Color( 0.45098, 0.215686, 0.215686, 1 )
+fog_depth_begin = 25.5
+fog_depth_end = 560.0
+
+[sub_resource type="BoxShape" id=22]
+extents = Vector3( 0.111659, 1.12047, 1.27376 )
+
+[node name="World" type="Spatial"]
+script = ExtResource( 23 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+
+[node name="Sala1" type="Spatial" parent="."]
+
+[node name="Chao" type="MeshInstance" parent="Sala1"]
+transform = Transform( 2.5198, 0, 0, 0, 0.0477191, 0, 0, 0, 2.54523, -0.877663, 0, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 16 )
+
+[node name="StaticBody" type="StaticBody" parent="Sala1/Chao"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Sala1/Chao/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="Teto" type="MeshInstance" parent="Sala1"]
+transform = Transform( 2.52, 0, 0, 0, 0.048, 0, 0, 0, 2.545, -0.855278, 1.568, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="Sala1/Teto"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Sala1/Teto/StaticBody"]
+shape = SubResource( 6 )
+
+[node name="Parede1" type="MeshInstance" parent="Sala1"]
+transform = Transform( 0.103295, 0, 0, 0, 0.765159, 0, 0, 0, 2.53624, -3.3106, 0.780726, 0 )
+mesh = SubResource( 3 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Sala1/Parede1"]
+transform = Transform( 0.12378, 0, 0, 0, 0.056074, 0, 0, 0, 1, 0.951681, -0.925028, 0 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="Sala1/Parede1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Sala1/Parede1/StaticBody"]
+shape = SubResource( 10 )
+
+[node name="Parede2" type="MeshInstance" parent="Sala1"]
+transform = Transform( -4.51516e-09, 0, 2.53624, 0, 0.765159, 0, -0.103295, 0, -1.10863e-07, -0.867552, 0.780726, 2.43511 )
+mesh = SubResource( 3 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Sala1/Parede2"]
+transform = Transform( 0.12378, 0, 0, 0, 0.056074, 0, -8.32667e-17, 0, 1, 0.951679, -0.925028, 0 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="Sala1/Parede2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Sala1/Parede2/StaticBody"]
+shape = SubResource( 11 )
+
+[node name="Parede3" type="MeshInstance" parent="Sala1"]
+transform = Transform( -4.51516e-09, 0, -2.53624, 0, 0.765159, 0, 0.103295, 0, -1.10863e-07, -0.867552, 0.780726, -2.43647 )
+mesh = SubResource( 3 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Sala1/Parede3"]
+transform = Transform( 0.12378, 0, 0, 0, 0.056074, 0, 8.32667e-17, 0, 1, 0.951681, -0.925028, 0 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="Sala1/Parede3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Sala1/Parede3/StaticBody"]
+shape = SubResource( 12 )
+
+[node name="Parede4" type="MeshInstance" parent="Sala1"]
+transform = Transform( -0.103295, 0, -2.21725e-07, 0, 0.765159, 0, 3.89388e-09, 0, -1.09363, 1.55755, 0.766927, -1.31333 )
+mesh = SubResource( 3 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 11 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Sala1/Parede4"]
+transform = Transform( 0.12378, 0, 0, 0, 0.056074, 0, 0, 0, 1, 0.951681, -0.895862, 0 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="Sala1/Parede4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Sala1/Parede4/StaticBody"]
+shape = SubResource( 12 )
+
+[node name="Parede5" type="MeshInstance" parent="Sala1"]
+transform = Transform( -0.103295, 0, -2.21725e-07, 0, 0.765159, 0, 3.89388e-09, 0, -1.09363, 1.55681, 0.765273, 1.31641 )
+mesh = SubResource( 3 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 11 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Sala1/Parede5"]
+transform = Transform( 0.12378, 0, 0, 0, 0.056074, 0, 0, 0, 1, 0.951681, -0.895862, 0 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="Sala1/Parede5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Sala1/Parede5/StaticBody"]
+shape = SubResource( 12 )
+
+[node name="Parede6" type="MeshInstance" parent="Sala1"]
+transform = Transform( -0.103295, 0, -2.21725e-07, 0, 0.25371, 0, 9.30172e-10, 0, -0.261246, 1.55681, 1.27454, 0.0226015 )
+mesh = SubResource( 3 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 11 )
+
+[node name="StaticBody" type="StaticBody" parent="Sala1/Parede6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Sala1/Parede6/StaticBody"]
+shape = SubResource( 12 )
+
+[node name="Door" parent="Sala1" instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.47429, 0.0490902, -0.0102254 )
+
+[node name="Moveis" type="Spatial" parent="Sala1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.867552, 0.780726, -1.22645 )
+
+[node name="Cama" parent="Sala1/Moveis" instance=ExtResource( 4 )]
+transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, -0.275464, -0.107204 )
+
+[node name="Desk" parent="Sala1/Moveis" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11657, -0.730376, 1.78666 )
+
+[node name="Lamp" parent="Sala1/Moveis" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0434411, -0.605408, 1.23222 )
+
+[node name="Mesa" parent="Sala1/Moveis" instance=ExtResource( 10 )]
+transform = Transform( -0.282146, 0, 0.59767, 0, 1, 0, -0.64062, 0, -0.26323, 1.10499, -0.761514, 2.57354 )
+
+[node name="Plants" type="MeshInstance" parent="Sala1/Moveis"]
+transform = Transform( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -2.08172, -0.740765, 2.47184 )
+mesh = ExtResource( 8 )
+skeleton = NodePath("../TV")
+material/0 = SubResource( 13 )
+material/1 = SubResource( 14 )
+
+[node name="StaticBody" type="StaticBody" parent="Sala1/Moveis/Plants"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Sala1/Moveis/Plants/StaticBody"]
+transform = Transform( 1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0 )
+shape = SubResource( 15 )
+
+[node name="TV" type="Spatial" parent="Sala1/Moveis"]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 0.878696, -0.312437, 3.56221 )
+
+[node name="TV" parent="Sala1/Moveis/TV" instance=ExtResource( 9 )]
+
+[node name="Keyteste2" parent="Sala1/Moveis" instance=ExtResource( 24 )]
+transform = Transform( -4.36758e-08, 0.0285323, 0.999593, 1.24718e-09, 0.999593, -0.0285323, -1, 5.07594e-13, -4.36936e-08, -2.11338, -0.147441, 1.52378 )
+can_sleep = false
+
+[node name="Carta" parent="Sala1/Moveis" instance=ExtResource( 29 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.15343, -0.158263, 1.95526 )
+
+[node name="Sala2" type="Spatial" parent="."]
+transform = Transform( -0.594792, 0, -5.19984e-08, 0, 1, 0, 4.97273e-08, 0, -0.568814, 6.86473, 0, -0.00962257 )
+
+[node name="Chao" type="MeshInstance" parent="Sala2"]
+transform = Transform( 2.5198, 0, -2.84217e-14, 0, 0.0477191, 0, -2.84217e-14, 0, 2.54523, -0.877663, 0, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 2 )
+
+[node name="StaticBody" type="StaticBody" parent="Sala2/Chao"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Sala2/Chao/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="Teto" type="MeshInstance" parent="Sala2"]
+transform = Transform( 2.52, 0, 0, 0, 0.048, 0, 0, 0, 2.545, -0.855278, 1.568, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 13 )
+
+[node name="StaticBody" type="StaticBody" parent="Sala2/Teto"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Sala2/Teto/StaticBody"]
+shape = SubResource( 6 )
+
+[node name="Parede1" type="MeshInstance" parent="Sala2"]
+transform = Transform( 0.103295, 0, 0, 0, 0.765159, 0, 0, 0, 2.53624, -3.3106, 0.780726, 0 )
+mesh = SubResource( 3 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 13 )
+
+[node name="StaticBody" type="StaticBody" parent="Sala2/Parede1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Sala2/Parede1/StaticBody"]
+shape = SubResource( 10 )
+
+[node name="Parede2" type="MeshInstance" parent="Sala2"]
+transform = Transform( -4.51516e-09, 0, 2.53624, 0, 0.765159, 0, -0.103295, 0, -1.10863e-07, -0.867552, 0.780726, 2.43511 )
+mesh = SubResource( 3 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 13 )
+
+[node name="StaticBody" type="StaticBody" parent="Sala2/Parede2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Sala2/Parede2/StaticBody"]
+shape = SubResource( 11 )
+
+[node name="Parede3" type="MeshInstance" parent="Sala2"]
+transform = Transform( -4.51516e-09, 0, -2.53624, 0, 0.765159, 0, 0.103295, 0, -1.10863e-07, -0.867552, 0.780726, -2.43647 )
+mesh = SubResource( 3 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 13 )
+
+[node name="StaticBody" type="StaticBody" parent="Sala2/Parede3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Sala2/Parede3/StaticBody"]
+shape = SubResource( 12 )
+
+[node name="Cave" parent="." instance=ExtResource( 17 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.2966, 0, 1.34032 )
+
+[node name="Parede4" parent="Cave" index="1"]
+transform = Transform( -2.28986e-09, 0, 1.28626, 0, 0.085801, 0, -1.04777, 0, -1.12453e-06, -1.18264, 1.59162, 3.60443 )
+material/0 = SubResource( 17 )
+
+[node name="Parede9" parent="Cave/Side" index="4"]
+transform = Transform( -0.0940467, -0.274233, 0.169679, -0.0663968, 0.274977, 0, -0.031791, -0.0927002, -0.501958, 0.38685, 1.49481, 4.21504 )
+
+[node name="Chao" parent="Cave" index="5"]
+transform = Transform( 1.78221, 0, -1.84856e-08, 0, 0.0477191, 0, -1.83009e-08, 0, 1.3773, -1.02544, 0.00602907, 3.26992 )
+
+[node name="Dark" type="SpotLight" parent="Cave"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.04133, 1.69393, 2.01405 )
+light_negative = true
+spot_angle = 90.0
+spot_angle_attenuation = 4.28709
+
+[node name="Alavanca" parent="Cave" instance=ExtResource( 25 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.865258, 0.695424, 2.5402 )
+
+[node name="Mina" parent="." instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.2807 )
+
+[node name="SpotLight2" parent="Mina/Corredor/Lampadas/MeshInstance5" index="0"]
+light_energy = 5.0
+
+[node name="Animacoes" type="AnimationPlayer" parent="."]
+anims/FadeIn = SubResource( 24 )
+anims/MudarMapa = SubResource( 21 )
+anims/RESET = SubResource( 18 )
+anims/chave = SubResource( 19 )
+anims/jumpscare = SubResource( 23 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 20 )
+
+[node name="PlayerDetector" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32032, 0.240297, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="PlayerDetector"]
+shape = SubResource( 22 )
+
+[node name="TerrorSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 26 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0 )
+
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]
+
+[editable path="Sala1/Moveis/Keyteste2"]
+[editable path="Sala1/Moveis/Keyteste2/Key"]
+[editable path="Cave"]
+[editable path="Cave/Alavanca"]
+[editable path="Mina"]

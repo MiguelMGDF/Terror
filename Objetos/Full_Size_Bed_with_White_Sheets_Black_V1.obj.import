@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Full_Size_Bed_with_White_Sheets_Black_V1.obj-61c6d7b9bca6663507ccc27abdc3879a.mesh"
+
+[deps]
+
+files=[ "res://.import/Full_Size_Bed_with_White_Sheets_Black_V1.obj-61c6d7b9bca6663507ccc27abdc3879a.mesh" ]
+
+source_file="res://Objetos/Full_Size_Bed_with_White_Sheets_Black_V1.obj"
+dest_files=[ "res://.import/Full_Size_Bed_with_White_Sheets_Black_V1.obj-61c6d7b9bca6663507ccc27abdc3879a.mesh", "res://.import/Full_Size_Bed_with_White_Sheets_Black_V1.obj-61c6d7b9bca6663507ccc27abdc3879a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

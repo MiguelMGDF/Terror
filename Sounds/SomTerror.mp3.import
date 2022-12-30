@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/SomTerror.mp3-6a3d3f2242b32762a713d317ab477f64.mp3str"
+
+[deps]
+
+source_file="res://Sounds/SomTerror.mp3"
+dest_files=[ "res://.import/SomTerror.mp3-6a3d3f2242b32762a713d317ab477f64.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

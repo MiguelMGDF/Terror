@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/DoorLock.mp3-ae4cbd11ab6e4e873d70bae120ea021c.mp3str"
+
+[deps]
+
+source_file="res://Sounds/DoorLock.mp3"
+dest_files=[ "res://.import/DoorLock.mp3-ae4cbd11ab6e4e873d70bae120ea021c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

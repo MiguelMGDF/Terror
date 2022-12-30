@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Frameless-Door.obj-75ff75910ee9859f8d994d990646071a.mesh"
+
+[deps]
+
+files=[ "res://.import/Frameless-Door.obj-75ff75910ee9859f8d994d990646071a.mesh" ]
+
+source_file="res://Objetos/Frameless-Door.obj"
+dest_files=[ "res://.import/Frameless-Door.obj-75ff75910ee9859f8d994d990646071a.mesh", "res://.import/Frameless-Door.obj-75ff75910ee9859f8d994d990646071a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
